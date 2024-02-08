@@ -1,0 +1,12 @@
+<form *ngIf="model.form" [formGroup]="model.form" (ngSubmit)="onSubmit()">
+  <app-personal-information
+    [form]="personalInformation"
+    [mainForm]="model.form"
+  ></app-personal-information>
+
+  <app-education *ngIf="education" [form]="education"></app-education>
+
+  <h4>Form Value:</h4>
+  <p>{{ model.form.value | json }}</p>
+  <button type="submit">Submit</button>
+</form>
